@@ -6,6 +6,8 @@ You may assume that each input would have exactly one solution, and you may not 
 You can return the answer in any order.
 
 """
+
+
 def two_sum(nums, target):
     checked = {}
     i = 0
@@ -15,3 +17,11 @@ def two_sum(nums, target):
     return [checked[target - nums[i]], i]
 
 
+# 167. two sum array is sorted
+def two_sum_sorted(numbers, target):
+    checked = {}
+    i = 0
+    while target - numbers[i] not in checked:
+        checked[numbers[i]] = i
+        i += 1
+    return [checked[target - numbers[i]] + 1, i + 1]
